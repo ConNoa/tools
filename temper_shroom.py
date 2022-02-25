@@ -36,6 +36,8 @@ while magicnumber > 1:
   # the results will be null (because Linux can't
   # guarantee the timing of calls to read the sensor).
   # If this happens try again!
+ print(time.strftime("%d.%m.%Y %H:%M:%S"))        
+
   if humidity is not None and temperature is not None:
       print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity))
       fails = 0
@@ -100,9 +102,14 @@ while magicnumber > 1:
 
             # Reset GPIO settings
             GPIO.cleanup()
-            
 
   time.sleep(rechecktime)
+  with open("/home/pi/box1_temperaturverlauf.csv", "a") as log:
+    while True:
+      csvtemp = temperature
+      csvhumid = humidity
+      log.write("{0},{1},{2}\n".format(strftime("%Y-%m-%d %H:%M:%S"),str(csvtemp),str(csvhumid)))
+      sleep(1)
 
 GPIO.cleanup()
 
