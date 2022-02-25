@@ -16,11 +16,11 @@ sensor = 22
 dhtpin = 27 
 pinList = 2
 PauseTimeS = 5*60
-rechecktime = 10
+rechecktime = 5
 lower_bound = True
 
 lowtemp = 21
-hightemp = 24
+hightemp = 23
 
 
 magicnumber = 42
