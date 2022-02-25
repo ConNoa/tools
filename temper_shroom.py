@@ -19,8 +19,8 @@ PauseTimeS = 5*60
 rechecktime = 10
 lower_bound = True
 
-lowtemp = 24
-hightemp = 27
+lowtemp = 21
+hightemp = 24
 
 
 magicnumber = 42
